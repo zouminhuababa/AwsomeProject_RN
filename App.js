@@ -9,8 +9,12 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
+  Alert
 } from 'react-native';
+import Button from 'react-native-button';
+
+
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -20,6 +24,16 @@ const instructions = Platform.select({
 });
 
 export default class App extends Component<{}> {
+  _handlePress() {
+    Alert.alert(
+      'Alert Title',
+      '这是提示框显示的消息',
+      [
+        {text: 'Cancel', onPress: () => console.log('Cancel Pressed!')},
+        {text: 'OK', onPress: () => console.log('OK Pressed!')},
+      ]
+    )
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -32,6 +46,12 @@ export default class App extends Component<{}> {
         <Text style={styles.instructions}>
           {instructions}
         </Text>
+        <Button
+          style={{fontSize: 20, color: 'green'}}
+          styleDisabled={{color: 'red'}}
+          onPress={() => this._handlePress()}>
+                  Press Me!
+      </Button>
       </View>
     );
   }
