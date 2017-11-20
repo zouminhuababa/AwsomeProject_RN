@@ -14,6 +14,20 @@ import {
 } from 'react-native';
 import Button from 'react-native-button';
 
+//import ColoredRaisedButton from './components/button'
+
+
+// import {MKButton,MKColor} from 'react-native-material-kit';
+
+// ColoredRaisedButton = MKButton.coloredButton()
+// .withText('BUTTON')
+// .withOnPress(() => {
+//   console.log("Hi, it's a colored button!");
+// })
+// .build();
+
+
+
 
 
 const instructions = Platform.select({
@@ -22,6 +36,7 @@ const instructions = Platform.select({
   android: 'Double tap R on your keyboard to reload,\n' +
     'Shake or press menu button for dev menu',
 });
+
 
 export default class App extends Component<{}> {
   _handlePress() {
@@ -52,6 +67,7 @@ export default class App extends Component<{}> {
           onPress={() => this._handlePress()}>
                   Press Me!
       </Button>
+      <ColoredRaisedButton/>
       </View>
     );
   }
